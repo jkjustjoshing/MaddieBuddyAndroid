@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
 import { WidgetPreview } from 'react-native-android-widget';
 
-import { PumpingWidget } from './src/PumpingWidget';
+import { PumpingWidget } from './src/PumpingWidget/PumpingWidget';
 
 export default function HelloWidgetPreviewScreen() {
   return (

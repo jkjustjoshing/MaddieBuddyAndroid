@@ -1,0 +1,8 @@
+<resources>
+	<string name="app_name">
+		MaddieBuddy
+	</string>
+	<string name="widget_pumping_description">
+		Last pumping time/amount
+	</string>
+</resources>
