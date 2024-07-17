@@ -1,11 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { StyleSheet, View } from 'react-native';
+import { WidgetPreview } from 'react-native-android-widget';
 
-export default function App() {
+import { PumpingWidget } from './src/PumpingWidget';
+
+export default function HelloWidgetPreviewScreen() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <WidgetPreview
+        renderWidget={() => <PumpingWidget />}
+        width={320}
+        height={200}
+      />
     </View>
   );
 }
@@ -13,7 +19,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
