@@ -1,21 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
-<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
-    android:minWidth="320dp"
-    android:minHeight="120dp"
-    android:targetCellWidth="5"
-    android:targetCellHeight="2"
-
-
-
-    android:resizeMode="none"
-
-    android:description="@string/widget_pumping_description"
-
-    android:initialLayout="@layout/rn_widget"
-    android:previewImage="@drawable/pumping_preview"
-
-
-
-    android:updatePeriodMillis="1800000"
-    android:widgetCategory="home_screen">
+<?xml
+version="1.0" encoding="utf-8"?>
+<appwidget-provider
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:minWidth="320dp"
+android:minHeight="120dp"
+android:minResizeHeight="120dp"
+android:minResizeWidth="120dp"
+android:targetCellWidth="5"
+android:targetCellHeight="2"
+android:resizeMode="none"
+android:description="@string/widget_pumping_description"
+android:initialLayout="@layout/rn_widget"
+android:previewImage="@drawable/pumping_preview"
+android:configure="run.kramer.maddie_buddy.WidgetConfigurationActivity"
+android:updatePeriodMillis="1800000"
+android:widgetCategory="home_screen">
 </appwidget-provider>

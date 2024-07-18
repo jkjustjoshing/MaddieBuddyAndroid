@@ -1,7 +1,7 @@
 import React from "react";
 import { FlexWidget, TextWidget } from "react-native-android-widget";
 
-export const PumpingWidget = () => {
+export const PumpingWidget = ({ data }: { data?: any }) => {
   return (
     <FlexWidget
       style={{
@@ -14,7 +14,7 @@ export const PumpingWidget = () => {
       }}
     >
       <TextWidget
-        text="Hello"
+        text={JSON.stringify(data || {})}
         style={{
           fontSize: 32,
           fontFamily: "Inter",
