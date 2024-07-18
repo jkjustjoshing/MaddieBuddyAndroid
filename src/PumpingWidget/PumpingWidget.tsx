@@ -13,10 +13,25 @@ export const PumpingWidget = ({ data }: { data?: any }) => {
         borderRadius: 16,
       }}
     >
-      <TextWidget
-        text={JSON.stringify(data || {})}
+      <FlexWidget
         style={{
-          fontSize: 32,
+          height: "wrap_content",
+          width: "wrap_content",
+          alignItems: "center",
+          justifyContent: "center",
+          padding: 16,
+          backgroundColor: "#ff0000",
+          borderColor: "#ffff00",
+          borderWidth: 2,
+        }}
+        clickAction="MY_ACTION"
+      >
+        <TextWidget style={{ fontSize: 12 }} text="My action" />
+      </FlexWidget>
+      <TextWidget
+        text={JSON.stringify(data || {}, null, 2)}
+        style={{
+          fontSize: 10,
           fontFamily: "Inter",
           color: "#000000",
         }}

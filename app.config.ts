@@ -8,10 +8,12 @@ const widgetConfig: WithAndroidWidgetsParams = {
     {
       name: 'Pumping', // This name will be the **name** with which we will reference our widget.
       label: 'Pumping', // Label shown in the widget picker
-      minWidth: '320dp',
+      minWidth: '120dp',
       minHeight: '120dp',
-      minResizeWidth: '320dp',
+      minResizeWidth: '120dp',
       minResizeHeight: '120dp',
+      maxResizeWidth: '720dp',
+      maxResizeHeight: '720dp',
       // This means the widget's default size is 5x2 cells, as specified by the targetCellWidth and targetCellHeight attributes.
       // Or 320×120dp, as specified by minWidth and minHeight for devices running Android 11 or lower.
       // If defined, targetCellWidth,targetCellHeight attributes are used instead of minWidth or minHeight.
@@ -27,6 +29,8 @@ const widgetConfig: WithAndroidWidgetsParams = {
       updatePeriodMillis: 1800000,
 
       widgetFeatures: 'reconfigurable',
+      resizeMode: 'horizontal|vertical',
+
     },
   ],
 };
