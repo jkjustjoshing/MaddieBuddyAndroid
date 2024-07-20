@@ -18,6 +18,11 @@ export function WidgetConfigurationScreen({
       setToken((t) => t || token);
       const url = await AsyncStorage.getItem("configuration.url");
       setUrl((u) => u || url);
+
+      if (token && url) {
+        const data = await getWidgetData();
+        renderWidget(<PumpingWidget data={data} dimensions={widgetInfo} />);
+      }
     };
     doAsync();
   }, []);
@@ -29,15 +34,15 @@ export function WidgetConfigurationScreen({
     await AsyncStorage.setItem("configuration.token", token);
     await AsyncStorage.setItem("configuration.url", url);
 
-    const data = await getWidgetData(widgetInfo.widgetId);
-    renderWidget(<PumpingWidget data={{ data }} />);
+    const data = await getWidgetData();
+    renderWidget(<PumpingWidget data={data} dimensions={widgetInfo} />);
     setResult("ok");
   };
 
   return (
     <View>
-      <TextInput placeholder="URL" onChangeText={setUrl} />
-      <TextInput placeholder="Token" onChangeText={setToken} />
+      <TextInput placeholder="URL" onChangeText={setUrl} value={url} />
+      <TextInput placeholder="Token" onChangeText={setToken} value={token} />
       <Button onPress={done} disabled={!token || !url} title="Done" />
     </View>
   );
